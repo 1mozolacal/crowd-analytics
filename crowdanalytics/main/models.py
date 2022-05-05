@@ -18,7 +18,7 @@ class Annotator(models.Model):
 class Company(models.Model):
     abstract_user = models.OneToOneField(AbstractUser, on_delete=models.CASCADE)
 
-class Dataset():
+class Dataset(models.Model):
     issuer = models.ForeignKey(Company,on_delete=models.CASCADE)
 
 class Datum(models.Model):
@@ -29,4 +29,4 @@ class Record(models.Model):
     datum = models.ForeignKey(Datum,on_delete=models.SET_NULL,null=True)
     reference = models.CharField(max_length=256)
     points = models.FloatField()
-    completed_by = models.ForeignKey(Annotator)
+    completed_by = models.ForeignKey(Annotator,on_delete=models.SET_NULL,null=True)

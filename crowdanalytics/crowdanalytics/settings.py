@@ -27,7 +27,7 @@ DEBUG = True
 
 AUTH_PROFILE_MODULE = 'main.AbstractUser'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'main',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
